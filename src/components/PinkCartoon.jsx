@@ -10,14 +10,11 @@ const StyledPinkCartoon = styled.img.attrs({
   top: ${(props) => props.top};
   left: ${(props) => props.left};
   right: ${(props) => props.right};
-  bottom: ${(props) => props.bottom};
+  @media (max-width: 725px) {
+    display: none;
+  }
 `;
 
 export const PinkCartoon = (props) => (
-  <StyledPinkCartoon
-    bottom={props.bottom}
-    top={props.top}
-    right={props.right}
-    left={props.left}
-  />
+  <StyledPinkCartoon top={props.top} right={props.right} left={props.left} />
 );

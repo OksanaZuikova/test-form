@@ -1,10 +1,10 @@
 import React from "react";
-import styled, { css } from "styled-components";
+import styled from "styled-components";
 
-const StyleButton = styled.button`
+const StyledButton = styled.button`
   border-radius: 500px;
   padding: 27px 0;
-  margin-top: 23px;
+  margin-top: 15px;
   width: 218px;
   height: 73px;
   background: #fad34f;
@@ -15,13 +15,19 @@ const StyleButton = styled.button`
   font-size: 18px;
   font-weight: 400;
   text-align: center;
+  cursor: pointer;
+  transition: all 300ms linear;
 
-  ${(props) =>
-    props.primary &&
-    css`
-      background: white;
-      color: #fad34f;
-    `};
+  &:hover {
+    color: #fad34f;
+    background: white;
+  }
+  @media (max-width: 850px) {
+    display: block;
+    margin: 15px auto;
+  }
 `;
 
-export const Button = () => <StyleButton>Send message</StyleButton>;
+export const Button = () => (
+  <StyledButton type="submit">Send message</StyledButton>
+);

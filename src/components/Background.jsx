@@ -4,9 +4,16 @@ import { YellowCartoon } from "./YellowCartoon";
 import { PinkCartoon } from "./PinkCartoon";
 
 const Container = styled.div`
-  max-width: 100%;
-  height: 1128px;
+  max-width: 1440px;
+  height: 928px;
   position: relative;
+  margin: 0 auto;
+  @media (max-width: 725px) {
+    height: 800px;
+  }
+  @media (max-width: 500px) {
+    height: 700px;
+  }
 `;
 
 const Clouds = styled.img.attrs({
@@ -26,6 +33,13 @@ const Map = styled.img.attrs({
   position: absolute;
   top: 0px;
   right: 0px;
+  @media (max-width: 725px) {
+    opacity: 0.7;
+    width: 500px;
+  }
+  @media (max-width: 500px) {
+    width: 400px;
+  }
 `;
 
 const YellowCartoon2 = styled.img.attrs({
@@ -33,12 +47,12 @@ const YellowCartoon2 = styled.img.attrs({
   alt: "emoji",
 })`
   position: absolute;
-  max-width: 100%;
-  z-index: 1;
   top: ${(props) => props.top};
   left: ${(props) => props.left};
   right: ${(props) => props.right};
-  bottom: ${(props) => props.bottom};
+  @media (max-width: 725px) {
+    display: none;
+  }
 `;
 
 const Ellipse = styled.img.attrs({
@@ -50,7 +64,6 @@ const Ellipse = styled.img.attrs({
   top: ${(props) => props.top};
   left: ${(props) => props.left};
   right: ${(props) => props.right};
-  bottom: ${(props) => props.bottom};
 `;
 
 export const Background = () => (
@@ -58,8 +71,8 @@ export const Background = () => (
     <Clouds />
     <Map />
     <YellowCartoon top="23px" left="29px" />
-    <YellowCartoon2 top="516px" right="550px" />
     <PinkCartoon top="558px" right="380px" />
+    <YellowCartoon2 top="516px" right="550px" />
     <Ellipse top="21px" right="639px" />
   </Container>
 );

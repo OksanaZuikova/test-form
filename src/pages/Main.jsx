@@ -1,22 +1,15 @@
 import React from "react";
 import styled from "styled-components";
-
-const Title = styled.h1`
-  font-family: "Apercu Arabic Pro", sans-serif;
-  font-size: 40px;
-  font-weight: 400; 
-  Line height 52px;
-  color: #3E3E3E;
-`;
+import { Form } from "../components/Form";
+import { Footer } from "../components/Footer";
 
 const Container = styled.div`
-  margin: 179px 147px;
-  position: absolute;
-  top: 0px;
-  left: 0px;
-`;
+margin: 0;
+padding: 0;`;
+
 export const Main = () => (
   <Container>
-    <Title>Reach out to us!</Title>
+    <Form />
+    <Footer />
   </Container>
 );
